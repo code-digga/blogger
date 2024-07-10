@@ -16,7 +16,6 @@ class BookmarkRepo {
     var value = post.toJson();
 
     try {
-      log('=============> adding bookmark');
       await _dbStore.saveBookMark(key, value);
       return const Right(true);
     } catch (e, s) {

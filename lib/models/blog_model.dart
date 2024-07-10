@@ -39,6 +39,16 @@ class BlogPost {
     };
   }
 
+  Map<String, dynamic> toMapStore() {
+    return {
+      'blogId': id,
+      'title': title,
+      'subTitle': subTitle,
+      'body': body,
+      'dateCreated': dateCreated
+    };
+  }
+
   factory BlogPost.fromMap(Map<String, dynamic> map) {
     return BlogPost(
       id: map['id'] ?? '',
@@ -50,7 +60,7 @@ class BlogPost {
     );
   }
 
-  String toJson() => json.encode(toMap());
+  String toJson() => json.encode(toMapStore());
 
   factory BlogPost.fromJson(String source) =>
       BlogPost.fromMap(json.decode(source));

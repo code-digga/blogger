@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get_storage/get_storage.dart';
 
 import 'blog/cubits/blog_cubit.dart';
 import 'blog/repository/blog_repository.dart';
@@ -13,6 +14,7 @@ import 'services/data_provider.dart';
 
 void main() async {
   var widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init('bookmarks');
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 

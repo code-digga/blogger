@@ -11,7 +11,6 @@ class DbProvider {
     if (_store != null) {
       return;
     }
-    await GetStorage.init(boxName);
     _store = GetStorage(boxName);
   }
 
